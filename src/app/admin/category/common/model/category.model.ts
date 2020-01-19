@@ -1,4 +1,7 @@
+import { Product } from "src/app/admin/product/common/model/product.model";
+
 export interface Category{
-      id?: string,
+      id: string,
       categoryName?: string
+      products?:Product[]
 }
