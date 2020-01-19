@@ -6,15 +6,17 @@ import { CategoryItemComponent } from '../admin/category/category-item/category-
 import { AdminComponent } from '../admin/admin.component';
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'admin', component: AdminComponent, children:[
-    {
-      path: 'brands', component: BrandComponent
-    },
-    {
-      path: 'categories', component: CategoryItemComponent
-    }
-  ] },
-  ];
+  {
+    path: 'admin', component: AdminComponent, children: [
+      {
+        path: 'brands', component: BrandComponent
+      },
+      {
+        path: 'categories', component: CategoryItemComponent
+      }
+    ]
+  },
+];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

@@ -22,7 +22,7 @@ import { AdminComponent } from './admin/admin.component';
     AdminComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserModule.withServerTransition({ appId: 'ng-cli-universal'}),
     HttpClientModule,
     FormsModule,
     RoutingModule,
