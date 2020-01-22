@@ -12,8 +12,8 @@ export class BrandComponent implements OnInit {
   ngOnInit(): void {
     this.loadBrands();
   }
-  brand: Brand | undefined;   // изменяемый бренд
-  brands: Brand[];                // массив брендов
+  brand: Brand= new Object as Brand;   // изменяемый бренд
+  brands: Brand[] = [];                // массив брендов
   tableMode: boolean = true;          // табличный режим
   constructor(private dataService: BrandService) { }
 
@@ -38,7 +38,7 @@ export class BrandComponent implements OnInit {
     this.brand = b;
   }
   cancel() {
-    this.brand = undefined;
+    this.brand = new Object as Brand;
     this.tableMode = true;
   }
   delete(p: Brand) {

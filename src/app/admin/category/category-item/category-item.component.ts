@@ -11,8 +11,8 @@ export class CategoryItemComponent implements OnInit {
   ngOnInit(): void {
     this.loadCategories();
   }
-  category: Category   // изменяемый бренд
-  categories: Category[];                // массив брендов
+  category: Category = new Object as Category;   // изменяемый бренд
+  categories: Category[] = [];                // массив брендов
   tableMode: boolean = true;          // табличный режим
   constructor(private dataService: CategoryDataService) { }
 
@@ -37,6 +37,7 @@ export class CategoryItemComponent implements OnInit {
     this.category = b;
   }
   cancel() {
+    this.category = new Object as Category;
     this.tableMode = true;
   }
   delete(p: Category) {

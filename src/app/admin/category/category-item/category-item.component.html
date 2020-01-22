@@ -12,7 +12,7 @@
       <tbody>
         <tr *ngFor="let p of categories">
           <ng-template [ngIf]="category?.id != p.id" [ngIfElse]="edit">
-            <td>{{p?.categoryName}}</td>
+            <td>{{p?.name}}</td>
             <td>
               <button class="btn btn-sm btn-primary" (click)="editCategory(p)">Изменить</button>
               <button class="btn btn-sm btn-danger" (click)="delete(p)">Удалить</button>
@@ -25,7 +25,7 @@
     <!--шаблон для редактирования-->
     <ng-template #edit>
       <td>
-        <input type="text" [(ngModel)]="category.categoryName" class="form-control" />
+        <input type="text" [(ngModel)]="category.name" class="form-control" />
       </td>
       <td>
         <input type="button" value="Сохранить" (click)="save()" class="btn btn-sm btn-success" />
@@ -37,7 +37,7 @@
     <ng-template #create>
       <div class="form-group">
         <label>Категория</label>
-        <input type="text" [(ngModel)]="category.categoryName" class="form-control"/>
+        <input type="text" [(ngModel)]="category.name" class="form-control"/>
       </div>
       <div>
         <input type="button" value="Сохранить" (click)="save()" class="btn btn-success" />
