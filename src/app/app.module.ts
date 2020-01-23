@@ -9,7 +9,8 @@ import { RoutingModule } from './routing/routing.module';
 import { BrandComponent } from './admin/brand/brand/brand.component';
 import { CategoryItemComponent } from './admin/category/category-item/category-item.component';
 import { AdminComponent } from './admin/admin.component';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatTabsModule } from '@angular/material/tabs'
 
 
 @NgModule({
@@ -19,13 +20,16 @@ import { AdminComponent } from './admin/admin.component';
     HomeComponent,
     BrandComponent,
     CategoryItemComponent, 
-    AdminComponent
+    AdminComponent, 
+
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal'}),
     HttpClientModule,
     FormsModule,
     RoutingModule,
+    MatTabsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

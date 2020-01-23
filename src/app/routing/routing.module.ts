@@ -4,7 +4,7 @@ import { BrandComponent } from '../admin/brand/brand/brand.component';
 import { Routes, RouterModule } from '@angular/router';
 import { CategoryItemComponent } from '../admin/category/category-item/category-item.component';
 import { AdminComponent } from '../admin/admin.component';
-const routes: Routes = [
+export const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
   {
     path: 'admin', component: AdminComponent, children: [
