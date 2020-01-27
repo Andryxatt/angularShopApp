@@ -1,15 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, HostListener, ElementRef } from '@angular/core';
+import { ControlValueAccessor } from '@angular/forms';
 
 @Component({
   selector: 'app-photo',
   templateUrl: './photo.component.html',
   styleUrls: ['./photo.component.css']
 })
-export class PhotoComponent implements OnInit {
+export class PhotoComponent implements ControlValueAccessor  {
+  @Input() progress;
+  onChange: Function;
+  private file: File | null = null;
 
-  constructor() { }
+  @HostListener('change', ['$event.target.files']) emitFiles( event: FileList ) {
+    const file = event && event.item(0);
+    this.onChange(file);
+    this.file = file;
+  }
 
-  ngOnInit() {
+  constructor( private host: ElementRef<HTMLInputElement> ) {
+  }
+
+  writeValue( value: null ) {
+    // clear file input
+    this.host.nativeElement.value = '';
+    this.file = null;
+  }
+
+  registerOnChange( fn: Function ) {
+    this.onChange = fn;
+  }
+
+  registerOnTouched( fn: Function ) {
   }
 
 }

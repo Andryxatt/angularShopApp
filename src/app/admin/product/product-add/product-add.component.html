@@ -1,0 +1,31 @@
+<form formGroup="productForm" class="example-form" (submit)="submit()">
+    <mat-form-field class="example-full-width">
+      <input matInput formControlName="'title'" placeholder="Title">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <textarea matInput formControlName="'description'" placeholder="Leave a description"></textarea>
+    </mat-form-field>
+  
+    <mat-form-field *ngIf="brands | async as brandList">
+      <mat-label>Author</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let brand of brandList" [value]="brand.id">
+          {{ brands  }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field *ngIf="categories | async as categoryList">
+      <mat-label>Category</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let category of categoryList"  [value]="category.id">
+          {{ category.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <input type="file" formControlName="'screen'" placeholder="Screen">
+  
+    <button mat-button type="submit" color="primary">Send</button>
+  </form>

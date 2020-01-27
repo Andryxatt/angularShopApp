@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ProviderComponent } from './provider/provider.component';
 
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ProviderComponent],
   imports: [
     CommonModule
   ]
